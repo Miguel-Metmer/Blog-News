@@ -1,0 +1,62 @@
+html
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+}
+header
+{
+    display: flex;
+    justify-content: center;
+}
+header a 
+{
+    color: black;
+    text-decoration: none;
+}
+nav
+{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+}
+nav ul
+{
+    display: flex;
+    padding: 0;
+}
+nav li
+{
+    list-style-type: none;
+    margin: 0 10px;
+}
+nav a
+{
+    color: black;
+    text-decoration: none;
+    font-size: 2.0em;
+}
+
+@keyframes initial-to-royalblue
+{
+    0%
+    {
+        color: black;
+    }
+    100%
+    {
+        color: royalblue;
+    }
+}
+
+
+nav a:hover
+{
+    animation: initial-to-royalblue 1.0s forwards;
+}
