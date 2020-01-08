@@ -7,12 +7,12 @@
     </head>
     <body>
         <header>
-            <h1> <a href="Index.php"> Actualités & Informations </h1>
+            <h1> <a href="Index.php"> Actualités & Informations </a> </h1>
         </header>
         <nav>
             <ul>
-                <li> <a href="Actualités.php"> Actualités </li>
-                <li> <a href="Index.php"> Forum </li>
+                <li> <a href="Actualités.php"> Actualités </a> </li>
+                <li> <a href="Index.php"> Forum </a></li>
             </ul>
         </nav>
         <?php echo $content ?>

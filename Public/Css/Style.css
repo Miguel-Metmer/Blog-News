@@ -60,3 +60,64 @@ nav a:hover
 {
     animation: initial-to-royalblue 1.0s forwards;
 }
+
+#News
+{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#News h1
+{
+    font-size: 4.0em;
+}
+
+#Article_Box
+{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+#Article_Box h1
+{
+    font-size: 1.0em;
+}
+
+.article
+{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 1px 10px 1px;
+    width: 30%;
+    margin-bottom: 5%;
+}
+
+.article h1
+{
+    margin: 2%;
+}
+
+.article h1 a
+{
+    text-decoration: none;
+    color: black;
+}
+
+.article h1 a:hover
+{
+    animation: initial-to-royalblue 1.0s forwards;
+}
+
+.article img
+{
+    width: 60%;
+    align-self: center;
+}

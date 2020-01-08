@@ -3,6 +3,9 @@ class NewsManager
     constructor()
     {
         this.news = [];
+        this.Title = document.querySelector("#News .article h1");
+        this.Image = document.querySelector("#News .article img");
+        this.Text = document.querySelector("#News .article p");
     }
 
     getNews(url)
@@ -12,7 +15,7 @@ class NewsManager
             .then( (response) => {
                 response.json()
                     .then( (text) => {
-                        this.show(text);
+                        this.showNews(text);
                     })
             })
             .catch( (err) => {
@@ -20,19 +23,39 @@ class NewsManager
             })
     }
 
-    show(data)
+    showNews(data)
     {
         for(let i = 0; i < data.totalResults; i++)
         {
-            this.news[i] = data.articles[i];
+            this.news.push(data.articles[i]);
         }
 
-        console.log(this.news[19]);
+        let articleBox = [];
+        let titleChild = [];
+        let imageChild = [];
+        let contentChild = [];
+
+        for (let i = 0; i < this.news.length; i++) 
+        {
+            articleBox[i] = document.createElement("div");
+            titleChild[i] = document.createElement("h1");
+            imageChild[i] = document.createElement("img");
+            contentChild[i] = document.createElement("p");
+
+            titleChild[i].innerHTML = "<a href=" + this.news[i].url + ">" + this.news[i].title + "</a>";
+            imageChild[i].setAttribute("src", this.news[i].urlToImage);
+            imageChild[i].setAttribute("alt", "Absence d'image");
+            contentChild[i].innerHTML = this.news[i].content;
+
+            document.querySelector("#News #Article_Box").appendChild(articleBox[i]);
+            articleBox[i].setAttribute("class", "article");
+            articleBox[i].appendChild(titleChild[i]);
+            articleBox[i].appendChild(imageChild[i]);
+            articleBox[i].appendChild(contentChild[i]);
+        }
     }
 
 }
 
 let news = new NewsManager();
-news.getNews("https://newsapi.org/v2/top-headlines?country=fr&apiKey=a727be71caab4420b0862dad9c71c661")
-
-   
+news.getNews('https://newsapi.org/v2/top-headlines?' +'country=fr&' + 'apiKey=a727be71caab4420b0862dad9c71c661');
