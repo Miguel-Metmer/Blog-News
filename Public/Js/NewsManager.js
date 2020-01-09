@@ -45,7 +45,7 @@ class NewsManager
             titleChild[i].innerHTML = "<a href=" + this.news[i].url + ">" + this.news[i].title + "</a>";
             imageChild[i].setAttribute("src", this.news[i].urlToImage);
             imageChild[i].setAttribute("alt", "Absence d'image");
-            contentChild[i].innerHTML = this.news[i].content;
+            contentChild[i].innerHTML = this.news[i].description;
 
             document.querySelector("#News #Article_Box").appendChild(articleBox[i]);
             articleBox[i].setAttribute("class", "article");
