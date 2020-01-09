@@ -7,64 +7,73 @@ class NewsManager
         this.Image = document.querySelector("#News .article img");
         this.Text = document.querySelector("#News .article p");
         
+        this.articleBox = [];
+        this.titleChild = [];
+        this.imageChild = [];
+        this.contentChild = [];
+
     }
 
-
-    getNews(url)
+    getNews()
     {
-        fetch(url)
+        fetch('https://newsapi.org/v2/top-headlines?' +'country=' + 'ar' + '&' + 'apiKey=a727be71caab4420b0862dad9c71c661')
         .then( (response) => {
             return response.json();
         })
         .then ((data) => {
-            this.showNews(data);
+            this.stockData(data);
+            return data;
+        })
+        .then ( (data) => {
+            this.showNews();
+        })
+        .catch ( (err) => {
+            console.log(err);
         })
     }
 
-    showNews(data)
+    stockData(data)
     {
         for(let i = 0; i < data.totalResults; i++)
         {
             this.news.push(data.articles[i]);
         }
+    }
 
-        let articleBox = [];
-        let titleChild = [];
-        let imageChild = [];
-        let contentChild = [];
-
+    showNews()
+    {
         for (let i = 0; i < this.news.length; i++) 
         {
-            articleBox[i] = document.createElement("div");
-            titleChild[i] = document.createElement("h1");
-            imageChild[i] = document.createElement("img");
-            contentChild[i] = document.createElement("p");
+            this.articleBox[i] = document.createElement("div");
+            this.titleChild[i] = document.createElement("h1");
+            this.imageChild[i] = document.createElement("img");
+            this.contentChild[i] = document.createElement("p");
 
-            titleChild[i].innerHTML = "<a href=" + this.news[i].url + ">" + this.news[i].title + "</a>";
+            this.titleChild[i].innerHTML = "<a href=" + this.news[i].url + ">" + this.news[i].title + "</a>";
             
-            
-
-            imageChild[i].setAttribute("src", this.news[i].urlToImage);
-            imageChild[i].setAttribute("alt", "Absence d'image");
+            this.imageChild[i].setAttribute("src", this.news[i].urlToImage);
+            this.imageChild[i].setAttribute("alt", "Absence d'image");
             
             if (this.news[i].description == "") 
             {
-                contentChild[i].innerHTML = '<h2>' + 'Pas de description disponible' + '</h2>';
+                this.contentChild[i].innerHTML = '<h2>' + 'Pas de description disponible' + '</h2>';
             }
             else
             {
-                contentChild[i].innerHTML =  '<i>' + this.news[i].description + '</i>';
+                this.contentChild[i].innerHTML =  '<i>' + this.news[i].description + '</i>';
             }
 
-            document.querySelector("#News #Article_Box").appendChild(articleBox[i]);
-            articleBox[i].setAttribute("class", "article");
-            articleBox[i].appendChild(titleChild[i]);
-            articleBox[i].appendChild(imageChild[i]);
-            articleBox[i].appendChild(contentChild[i]);
+            document.querySelector("#News #Article_Box").appendChild(this.articleBox[i]);
+            this.articleBox[i].setAttribute("class", "article");
+            this.articleBox[i].appendChild(this.titleChild[i]);
+            this.articleBox[i].appendChild(this.imageChild[i]);
+            this.articleBox[i].appendChild(this.contentChild[i]);
         }
     }
 
 }
 
 let news = new NewsManager();
-news.getNews('https://newsapi.org/v2/top-headlines?' +'country=fr&' + 'apiKey=a727be71caab4420b0862dad9c71c661')
+news.getNews();
+
+
