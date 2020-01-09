@@ -6,21 +6,19 @@ class NewsManager
         this.Title = document.querySelector("#News .article h1");
         this.Image = document.querySelector("#News .article img");
         this.Text = document.querySelector("#News .article p");
+        
     }
+
 
     getNews(url)
     {
-        let request = new Request(url);
-        fetch(request)
-            .then( (response) => {
-                response.json()
-                    .then( (text) => {
-                        this.showNews(text);
-                    })
-            })
-            .catch( (err) => {
-                console.log(err);
-            })
+        fetch(url)
+        .then( (response) => {
+            return response.json();
+        })
+        .then ((data) => {
+            this.showNews(data);
+        })
     }
 
     showNews(data)
@@ -43,9 +41,20 @@ class NewsManager
             contentChild[i] = document.createElement("p");
 
             titleChild[i].innerHTML = "<a href=" + this.news[i].url + ">" + this.news[i].title + "</a>";
+            
+            
+
             imageChild[i].setAttribute("src", this.news[i].urlToImage);
             imageChild[i].setAttribute("alt", "Absence d'image");
-            contentChild[i].innerHTML = this.news[i].description;
+            
+            if (this.news[i].description == "") 
+            {
+                contentChild[i].innerHTML = '<h2>' + 'Pas de description disponible' + '</h2>';
+            }
+            else
+            {
+                contentChild[i].innerHTML =  '<i>' + this.news[i].description + '</i>';
+            }
 
             document.querySelector("#News #Article_Box").appendChild(articleBox[i]);
             articleBox[i].setAttribute("class", "article");
@@ -58,4 +67,4 @@ class NewsManager
 }
 
 let news = new NewsManager();
-news.getNews('https://newsapi.org/v2/top-headlines?' +'country=fr&' + 'apiKey=a727be71caab4420b0862dad9c71c661');
+news.getNews('https://newsapi.org/v2/top-headlines?' +'country=fr&' + 'apiKey=a727be71caab4420b0862dad9c71c661')
