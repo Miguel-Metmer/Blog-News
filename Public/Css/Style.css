@@ -96,6 +96,11 @@ nav li ul li
     display: none;
 }
 
+nav li ul li a
+{
+    font-size: 1em;
+}
+
 nav li ul li:hover
 {
     animation: move 5s forwards;
@@ -132,13 +137,10 @@ nav a:hover
     display: flex;
     flex-direction: column;
     text-align: center;
-    /*background-image: url("../Image/News.png");
-    background-size: 38em;
-    background-repeat: repeat;*/
-    z-index: 4;
+    background-color: rgba(254, 254, 254, 0.781);
 }
 
-#News h1
+#News > h1
 {
     font-size: 4.0em;
     margin: 1%;
@@ -185,15 +187,15 @@ nav a:hover
     box-shadow: 2px 1px 10px 1px;
     width: 30%;
     margin-bottom: 5%;
-    background: linear-gradient(-45deg, #ffffff, #aa9aa0, #c5e8f5, #cbf1e9);    
+    background: linear-gradient(-45deg, #ffffff, #ecf1ed, #f0fff1e7, #bdffff);    
     background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
+    animation: gradient 25s ease infinite; 
 }
 
 .article h1
 {
-    margin: 2%;
-    height: 15%;
+    margin-top: 3%;
+    height: 75px;
 }
 
 .article h1 a
@@ -210,8 +212,470 @@ nav a:hover
 .article img
 {
     width: 80%;
-    height: 50%;
+    height: 40%;
     align-self: center;
+    box-shadow: 2px 1px 2px 1px;
     border: 1px solid black;
+    border-radius: 10px;
+
 }
 
+.article p
+{
+    margin: 2%;
+    height: 150px;
+    font-style: italic;
+}
+
+/* -------------------------- */
+@media all and (max-width: 1400px)
+{
+    html
+    {
+        margin: 0;
+        padding: 0;
+    }
+    body
+    {
+        margin: 0;
+        padding: 0;
+    }
+    header
+    {
+        display: flex;
+        justify-content: center;
+    }
+    header a 
+    {
+        color: black;
+        text-decoration: none;
+    }
+    nav
+    {
+        width: 90%;
+        padding-bottom: 2%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid black;
+    }
+    nav ul
+    {
+        display: flex;
+        padding: 0;
+    }
+    nav li
+    {
+        display: flex;
+        list-style-type: none;
+        margin: 0 10px;
+        position: relative;
+    }
+
+    @keyframes opacity
+    {
+        0%
+        {
+            opacity: 0;
+        }
+        10%
+        {
+            opacity: 1;
+        }
+        100%
+        {
+            opacity: 0;
+        }
+    }
+
+    @keyframes move
+    {
+        0%
+        {
+            transform: translateY(0);
+        }
+        35%
+        {
+            transform: translateY(10px);
+        }
+        75%
+        {
+            transform: translateY(-10px);
+        }
+        100%
+        {
+            transform: translateY(0);
+        }
+    }
+
+
+    nav li:hover > ul li
+    {
+        display: flex;
+        animation: opacity 25s forwards;
+    }
+
+    nav li ul
+    {
+        position: absolute;
+        height: 100%;
+        left: -300px;
+        top: 35px;
+    }
+
+    nav li ul li:nth-child(1)
+    {
+        display: none;
+    }
+
+    nav li ul li
+    {
+        display: flex;
+        align-items: center;
+        display: none;
+    }
+
+    nav li ul li:hover
+    {
+        animation: move 5s forwards;
+    }
+
+    nav a
+    {
+        color: black;
+        text-decoration: none;
+        font-size: 2.0em;
+    }
+
+    @keyframes initial-to-royalblue
+    {
+        0%
+        {
+            color: black;
+        }
+        100%
+        {
+            color: royalblue;
+        }
+    }
+
+
+    nav a:hover
+    {
+        animation: initial-to-royalblue 1.0s forwards;
+    }
+
+    #News
+    {
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #News h1
+    {
+        font-size: 4.0em;
+        margin: 1%;
+    }
+
+    #Article_Box
+    {
+        margin: auto;
+        width: 80%;
+        margin-top: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-content: space-between;
+    }
+
+    #Article_Box h1
+    {
+        font-size: 1.0em;
+    }
+
+    @keyframes gradient
+    {
+        0%
+        {
+            background-position: 0% 50%;
+        }
+        50%
+        {
+            background-position: 100% 50%;
+        }
+        100%
+        {
+            background-position: 0% 50%;
+        }
+    }
+
+    .article
+    {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        border-radius: 5px;
+        box-shadow: 2px 1px 10px 1px;
+        width: 45%;
+        margin-bottom: 5%;
+        background: linear-gradient(-45deg, #ffffff, #daeedb, #c5e8f5, #cbf1e9);    
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+    }
+
+    .article h1
+    {
+        margin: 2%;
+        height: 75px;
+    }
+
+    .article h1 a
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    .article h1 a:hover
+    {
+        animation: initial-to-royalblue 1.0s forwards;
+    }
+
+    .article img
+    {
+        width: 80%;
+        height: 50%;
+        align-self: center;
+        border: 1px solid black;
+    }
+
+    .article p
+    {
+        height: 150px;
+        font-style: italic;
+    }
+}
+
+/* -------------------------- */
+@media all and (max-width: 950px)
+{
+    html
+    {
+        margin: 0;
+        padding: 0;
+    }
+    body
+    {
+        margin: 0;
+        padding: 0;
+    }
+    header
+    {
+        display: flex;
+        justify-content: center;
+    }
+    header a 
+    {
+        color: black;
+        text-decoration: none;
+    }
+    nav
+    {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid black;
+    }
+    nav ul
+    {
+        display: flex;
+        padding: 0;
+    }
+    nav li
+    {
+        display: flex;
+        list-style-type: none;
+        margin: 0 10px;
+        position: relative;
+    }
+
+    @keyframes opacity
+    {
+        0%
+        {
+            opacity: 0;
+        }
+        10%
+        {
+            opacity: 1;
+        }
+        100%
+        {
+            opacity: 0;
+        }
+    }
+
+    @keyframes move
+    {
+        0%
+        {
+            transform: translateY(0);
+        }
+        35%
+        {
+            transform: translateY(10px);
+        }
+        75%
+        {
+            transform: translateY(-10px);
+        }
+        100%
+        {
+            transform: translateY(0);
+        }
+    }
+
+
+    nav li:hover > ul li
+    {
+        display: flex;
+        animation: opacity 25s forwards;
+    }
+
+    nav li ul
+    {
+        position: absolute;
+        height: 100%;
+        left: 130px;
+    }
+
+    nav li ul li
+    {
+        display: flex;
+        align-items: center;
+        display: none;
+    }
+
+    nav li ul li:hover
+    {
+        animation: move 5s forwards;
+    }
+
+    nav a
+    {
+        color: black;
+        text-decoration: none;
+        font-size: 2.0em;
+    }
+
+    @keyframes initial-to-royalblue
+    {
+        0%
+        {
+            color: black;
+        }
+        100%
+        {
+            color: royalblue;
+        }
+    }
+
+
+    nav a:hover
+    {
+        animation: initial-to-royalblue 1.0s forwards;
+    }
+
+    #News
+    {
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #News h1
+    {
+        font-size: 4.0em;
+        margin: 1%;
+    }
+
+    #Article_Box
+    {
+        width: 80%;
+        margin-top: 5%;
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+    }
+
+    #Article_Box h1
+    {
+        font-size: 1.0em;
+    }
+
+    @keyframes gradient
+    {
+        0%
+        {
+            background-position: 0% 50%;
+        }
+        50%
+        {
+            background-position: 100% 50%;
+        }
+        100%
+        {
+            background-position: 0% 50%;
+        }
+    }
+
+    .article
+    {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        border-radius: 5px;
+        box-shadow: 2px 1px 10px 1px;
+        width: 60%;
+        margin-bottom: 5%;
+        background: linear-gradient(-45deg, #ffffff, #daeedb, #c5e8f5, #cbf1e9);    
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+    }
+
+    .article h1
+    {
+        margin: 2%;
+        height: 75px;
+    }
+
+    .article h1 a
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    .article h1 a:hover
+    {
+        animation: initial-to-royalblue 1.0s forwards;
+    }
+
+    .article img
+    {
+        width: 80%;
+        height: 50%;
+        align-self: center;
+        border: 1px solid black;
+    }
+
+    .article p
+    {
+        width: 80%;
+        margin: auto;
+        height: 150px;
+        font-style: italic;
+    }
+}

@@ -3,9 +3,9 @@ require_once("Controller/Controller.php");
 
 if(isset($_GET["action"]))
 {
-    if($_GET["action"] == "getSportNews")
+    if($_GET["action"] == "getSportsNews")
     {
-        getSportNews();
+        getSportsNews($_GET['category']);
     }
 }
 else
