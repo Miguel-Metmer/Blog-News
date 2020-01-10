@@ -160,6 +160,22 @@ nav a:hover
     font-size: 1.0em;
 }
 
+@keyframes gradient
+{
+    0%
+    {
+        background-position: 0% 50%;
+    }
+    50%
+    {
+        background-position: 100% 50%;
+    }
+    100%
+    {
+        background-position: 0% 50%;
+    }
+}
+
 .article
 {
     display: flex;
@@ -169,12 +185,15 @@ nav a:hover
     box-shadow: 2px 1px 10px 1px;
     width: 30%;
     margin-bottom: 5%;
-    background-color: white;
+    background: linear-gradient(-45deg, #ffffff, #aa9aa0, #c5e8f5, #cbf1e9);    
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
 }
 
 .article h1
 {
     margin: 2%;
+    height: 15%;
 }
 
 .article h1 a
@@ -190,7 +209,8 @@ nav a:hover
 
 .article img
 {
-    width: 60%;
+    width: 80%;
+    height: 50%;
     align-self: center;
     border: 1px solid black;
 }
