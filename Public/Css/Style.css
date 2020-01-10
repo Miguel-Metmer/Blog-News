@@ -45,7 +45,7 @@ nav li
     {
         opacity: 0;
     }
-    10%
+    50%
     {
         opacity: 1;
     }
@@ -79,7 +79,7 @@ nav li
 nav li:hover > ul li
 {
     display: flex;
-    animation: opacity 25s forwards;
+    animation: opacity 10s forwards;
 }
 
 nav li ul

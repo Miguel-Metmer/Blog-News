@@ -26,7 +26,7 @@
                 </li>   
             </ul>
         </nav>
-        <?php echo $content ?>
+        <?= $content ?>
     </body>
 
     <script src="Public/Js/NewsManager.js"></script>
