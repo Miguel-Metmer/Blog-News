@@ -32,24 +32,6 @@ class NewsManager
         })
     }
 
-    getSportsNews()
-    {
-        fetch("https://newsapi.org/v2/top-headlines?country=fr&category=sports&apiKey=a727be71caab4420b0862dad9c71c661")
-        .then( (response) => {
-            return response.json();
-        })
-        .then ((data) => {
-            this.stockData(data);
-            return data;
-        })
-        .then ( (data) => {
-            this.showNews();
-            document.location.reload(true);
-        })
-        .catch ( (err) => {
-            console.log(err);
-        })
-    }
 
     stockData(data)
     {
@@ -94,10 +76,5 @@ class NewsManager
 
 let news = new NewsManager();
 news.getNews();
-
-document.getElementById("Test").addEventListener("click", () => {
-    news.getSportsNews();
-})
-
 
 

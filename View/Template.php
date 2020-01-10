@@ -16,7 +16,7 @@
                     <a href="Actualités.php"> Actualités </a>
                     <ul> 
                         <li><i class="fas fa-long-arrow-alt-right"></i> </li>
-                        <li> <a href="index.php?action='GetSportsNews'" id="Test"> Sport </a> </li> 
+                        <li> <a href="index.php" id="Test"> Sport </a> </li> 
                         <li> <a href="index.php"> Divertissement </a> </li>
                         <li> <a href="index.php"> Santé </a>   </li>
                         <li> <a href="index.php"> Sciences </a>  </li>
@@ -28,6 +28,6 @@
         <?php echo $content ?>
     </body>
 
-    <script src="/Public/Js/NewsManager.js"></script>
+    <script src="Public/Js/NewsManager.js"></script>
     <script src="https://kit.fontawesome.com/a89d872ece.js" crossorigin="anonymous"></script> <!-- font awesome script-->
 </html>
