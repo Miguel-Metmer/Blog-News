@@ -2,8 +2,16 @@
 ob_start();
 ?>
 
+
+<section id="Slider">
+    <figure>
+        <img src="/Public/Image/background.jpg" alt="Background"/>
+        <figcaption>    
+            <h1> Actualités </h1> 
+        </figcaption>
+    </figure>
+</section>
 <section id="News"> 
-    <h1> Actualités </h1>
     <div id="Article_Box">
     </div>
 </section>

@@ -3,7 +3,6 @@ class NewsManager
     constructor()
     {
         this.news = [];
-        this.sectionTitle = document.querySelector("#News h1");
         this.Title = document.querySelector("#News .article h1");
         this.Image = document.querySelector("#News .article img");
         this.Text = document.querySelector("#News .article p");
@@ -11,6 +10,7 @@ class NewsManager
         this.articleBox = [];
         this.titleChild = [];
         this.imageChild = [];
+        this.dateChild = [];
         this.contentChild = [];
 
         this.icon = document.getElementById("Icon");
@@ -57,11 +57,11 @@ class NewsManager
             this.articleBox[i] = document.createElement("div");
             this.titleChild[i] = document.createElement("h1");
             this.imageChild[i] = document.createElement("img");
+            this.dateChild[i] = document.createElement("h2");
             this.contentChild[i] = document.createElement("p");
 
             this.titleChild[i].innerHTML = "<a href=" + this.news[i].url + ">" + this.news[i].title + "</a>";
-            
-            
+            this.dateChild[i].innerHTML = "Date de publication : " + this.news[i].publishedAt;
             
             if(this.news[i].urlToImage == null)
             {
@@ -72,7 +72,6 @@ class NewsManager
                 this.imageChild[i].setAttribute("src", this.news[i].urlToImage);
                 this.imageChild[i].setAttribute("alt", "Absence d'image");
             }
-
 
             if (this.news[i].description == "" || this.news[i].description == null) 
             {
@@ -88,6 +87,7 @@ class NewsManager
             this.articleBox[i].appendChild(this.titleChild[i]);
             this.articleBox[i].appendChild(this.imageChild[i]);
             this.articleBox[i].appendChild(this.contentChild[i]);
+            this.articleBox[i].appendChild(this.dateChild[i]);
         }
     }
 

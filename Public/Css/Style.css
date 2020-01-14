@@ -24,7 +24,7 @@ nav
     margin: auto;
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
 }
 nav ul
 {
@@ -133,17 +133,54 @@ nav a:hover
 
 #News
 {
-    margin-top: 2%;
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: rgba(254, 254, 254, 0.781);
+    background-color: rgba(253, 253, 253, 0.781);
 }
 
-#News > h1
+#News::after
+{
+    content: "";
+    flex: auto;
+}
+
+#Slider 
+{
+    width: 100%;
+    height: 600px;
+}
+
+#Slider figure 
+{
+    position: relative;
+    margin: 0;
+    background-color: rgba(146, 166, 175, 0.842);
+    height: 100%;
+}
+
+#Slider figure img
+{
+    width: 100%;
+    height: 600px;
+    opacity: 0.4;
+    vertical-align: middle;
+}
+
+#Slider figure figcaption
+{
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    margin: auto;
+}
+
+#Slider figure figcaption h1
 {
     font-size: 4.0em;
-    margin: 1%;
+    width: 100%;
+    margin: 0;
+    text-align: center;
 }
 
 #Article_Box
@@ -180,22 +217,15 @@ nav a:hover
 
 .article
 {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    border-radius: 5px;
-    box-shadow: 2px 1px 10px 1px;
     width: 30%;
-    margin-bottom: 5%;
-    background: linear-gradient(-45deg, #ffffff, #ecf1ed, #f0fff1e7, #bdffff);    
-    background-size: 400% 400%;
-    animation: gradient 25s ease infinite; 
 }
 
 .article h1
 {
-    margin-top: 3%;
-    height: 75px;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 50px;
 }
 
 .article h1 a
@@ -217,14 +247,19 @@ nav a:hover
     box-shadow: 2px 1px 2px 1px;
     border: 1px solid black;
     border-radius: 10px;
-
 }
 
 .article p
 {
-    margin: 2%;
-    height: 150px;
+    margin: 4%;
+    height: 100px;
     font-style: italic;
+}
+
+.article h2
+{
+    font-size: 1.0em;
+    font-weight: normal;
 }
 
 /* -------------------------- */
@@ -414,15 +449,15 @@ nav a:hover
     .article
     {
         display: flex;
-        flex-direction: column;
-        border: 1px solid black;
-        border-radius: 5px;
-        box-shadow: 2px 1px 10px 1px;
-        width: 45%;
-        margin-bottom: 5%;
-        background: linear-gradient(-45deg, #ffffff, #daeedb, #c5e8f5, #cbf1e9);    
-        background-size: 400% 400%;
-        animation: gradient 10s ease infinite;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    /* border-radius: 5px; */
+    /* box-shadow: 2px 1px 10px 1px; */
+    width: 30%;
+    margin-bottom: 2%;
+    /*background: linear-gradient(-45deg, #ffffff, #ecf1ed, #f0fff9e7, #bdffff);    
+    background-size: 400% 400%;
+    animation: gradient 25s ease infinite; */
     }
 
     .article h1
@@ -636,14 +671,14 @@ nav a:hover
     {
         display: flex;
         flex-direction: column;
-        border: 1px solid black;
-        border-radius: 5px;
-        box-shadow: 2px 1px 10px 1px;
+        /* border: 1px solid black; */
+        /* border-radius: 5px; */
+        /* box-shadow: 2px 1px 10px 1px; */
         width: 60%;
         margin-bottom: 5%;
-        background: linear-gradient(-45deg, #ffffff, #daeedb, #c5e8f5, #cbf1e9);    
+        /*background: linear-gradient(-45deg, #ffffff, #ecf1ed, #f0fff9e7, #bdffff);    
         background-size: 400% 400%;
-        animation: gradient 10s ease infinite;
+        animation: gradient 25s ease infinite; */
     }
 
     .article h1
